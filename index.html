@@ -1,23 +1,88 @@
+<!DOCTYPE HTML>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes" name="viewport">
+<head>
+  <!--  basic meta information -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Type" content="application/json; charset=utf-8">
+  <meta content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes" name="viewport">
 
-        <title></title>
+  <title>My ARchitect World</title>
 
-        <script src="https://www.wikitude.com/libs/architect.js"></script>
-        <script type="text/javascript" src="js/ade.js"></script>
 
-        <link rel="stylesheet" href="01_ImageRecognition_1_ImageOnTarget/css/default.css">
+  <script src="https://www.wikitude.com/libs/architect.js"></script>
+  <script src="js/ade.js"></script>
 
-        
-    </head>
 
-    <body>
-        <div id="loadingMessage" class="info">Loading ...</div>
-       
-        <script type="text/javascript" src="01_ImageRecognition_1_ImageOnTarget/js/imageontarget.js"></script>
-    
-    </body>
+  <!-- jquery mobile CSS -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <!-- required to set background transparent & enable "click through" -->
+  <link rel="stylesheet" href="jquery/x.css" />
+
+  <!-- jquery JS files -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <!-- marker representation-->
+  <!--<script src="js/marker.js"></script>    -->
+
+  <!-- World logic-->
+  <script type="text/javascript" src="js/poiwithlabel.js"></script>
+   <!-- radar component -->
+
+</head>
+
+<body style="background: rgba(0,0,0,0)">
+  <div data-role="page" id="page1" style="background: rgba(0,0,0,0);">
+      <!-- MAIN PAGE CONTENT -->
+      <!-- transparent footer-->
+      <div data-role="footer" class="ui-bar" data-theme="f" data-position="fixed" style="text-align:center; background-image: url('https://placehold.it/120x120&text=image1')">
+
+          <!-- small status-button -->
+          <a style="text-align:right;" id="popupInfoButton" href="#popupInfo" data-rel="popup" data-role="button" class="ui-icon-alt"
+              data-inline="true" data-transition="pop" data-icon="alert" data-theme="e" data-iconpos="notext">Log</a>            </p>
+
+          <!-- popup displayed when button clicked -->
+          <div data-role="popup" id="popupInfo" style="background-image: url('https://placehold.it/120x120&text=image1')" class="ui-content" data-theme="e" style="max-width:350px; bottom: 66px;">
+              <p style="text-align:right;" id="status-message">Finding Loaction</p>
+          </div>
+      </div>
+  </div>
+</body>
+
+  <script>      
+      // var AR = AR || {}, lat, lon, marker_object, marker_image, loaded = false;
+      // AR.logger.activateDebugMode();
+
+      // function locationChanged(lat, lon, alt, acc) {
+      //     if(!loaded){
+      //         let shudehill = new AR.GeoLocation(53.484543, -2.238568);
+      //         let home = new AR.GeoLocation(53.522852, -2.264962);
+      //         let backdoor = new AR.GeoLocation(53.522713, -2.264927);
+            
+      //         marker_image = new AR.ImageResource("https://poc-star.firebaseapp.com/assets/sun.png",{
+      //             onLoaded:function (params) {
+      //             AR.logger.info("IMAGE HAS BEEN LOADED")
+      //             },
+      //             onError: function (err) {
+      //                 AR.logger.error(err);
+      //             }
+      //         });
+      //         var marker_loc = new AR.GeoLocation(lat , lon, alt);
+      //         var marker_drawable = new AR.ImageDrawable(marker_image, 4);
+      //         marker_object = new AR.GeoObject( shudehill, {
+      //             drawables: {
+      //                 cam: [marker_drawable],
+      //             }
+      //         });
+            
+      //         AR.logger.debug(`added marker at location ${lat} ${lon} ${alt}`);          
+      //         loaded =true
+      //     }
+      // }
+
+      // AR.context.onLocationChanged = locationChanged;
+      // // locationChanged(53.4845461, -2.238389)
+      // AR.logger.debug("started");
+  </script>
+
 </html>
-
